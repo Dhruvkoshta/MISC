@@ -1,0 +1,11 @@
+	AREA RESET, CODE, READONLY
+	EXPORT __main     ; Define entry point
+	ENTRY
+
+__main
+	MOV R3, #10
+
+stop
+	B stop
+
+	END

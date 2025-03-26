@@ -1,0 +1,56 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             RESET, CODE, READONLY
+    2 00000000                 ENTRY
+    3 00000000 E3A00000        MOV              R0,#0
+    4 00000004 E3A01000        MOV              R1,#0
+    5 00000008         Loop
+    6 00000008 E0811000        ADD              R1,R1,R0
+    7 0000000C E2800001        ADD              R0,#1
+    8 00000010 E350000A        CMP              R0,#10
+    9 00000014 1AFFFFFB        BNE              Loop
+   10 00000018         
+   11 00000018         
+   12 00000018         stop
+   13 00000018 EAFFFFFE        B                stop
+   14 0000001C         
+   15 0000001C                 END
+Command Line: --debug --xref --apcs=interwork --depend=.\init.d -o.\init.o -IC:
+\Keil\ARM\RV31\INC -IC:\Keil\ARM\CMSIS\Include -IC:\Keil\ARM\Inc\Philips --pred
+efine="__EVAL SETA 1" --list=.\init.lst init.asm
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+Loop 00000008
+
+Symbol: Loop
+   Definitions
+      At line 5 in file init.asm
+   Uses
+      At line 9 in file init.asm
+Comment: Loop used once
+RESET 00000000
+
+Symbol: RESET
+   Definitions
+      At line 1 in file init.asm
+   Uses
+      None
+Comment: RESET unused
+stop 00000018
+
+Symbol: stop
+   Definitions
+      At line 12 in file init.asm
+   Uses
+      At line 13 in file init.asm
+Comment: stop used once
+3 symbols
+334 symbols in table

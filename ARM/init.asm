@@ -1,0 +1,15 @@
+	AREA RESET, CODE, READONLY
+	ENTRY
+	MOV R0,#0
+	MOV R1,#0
+Loop
+	ADD R1,R1,R0
+	ADD R0,#1
+	CMP R0,#10
+	BNE Loop
+	
+
+stop
+	B stop
+
+	END
